@@ -1,46 +1,113 @@
-body{
-  background: url("https://c0.wallpaperflare.com/preview/572/961/266/sky-dark-light-clouds.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.container{
+.container {
   text-align: center;
-  background-color: white;
-  width:50vw;
-  margin-left: auto;
-  margin-right: auto;
+  width: 60vw;
+  margin: 2em auto;
   padding: 2em;
-  margin-top: 2em;
-  border-radius: 1em;
-   
+  border-radius: 2em;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease-in-out;
 }
 
-.input{
-  border-radius: 1.2em;
+.input {
+  border-radius: 1.5em;
   padding: 1em;
+  width: 100%;
+  border: none;
+  background: rgba(255, 255, 255, 0.3);
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-@media screen and (max-width:576px) {
-  body{
-    background-size: cover;
-    height: auto;
-    background-size: cover;
+.input::placeholder {
+  color: #d9d9d9;
+}
+
+/* Rest of your styles for weather cards */
+
+
+.weather-icon {
+  font-size: 4rem;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translatey(0px);
   }
-.container{
-  text-align: center;
-  background-color: white;
-  width:70vw;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 2em;
-  margin-top: 6em;
-  border-radius: 1em;
-   
+  50% {
+    transform: translatey(-10px);
+  }
+  100% {
+    transform: translatey(0px);
+  }
 }
 
-.input{
-  border-radius: 1em;
-  padding: 0.5em;
+.forecast-card {
+  background: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+  backdrop-filter: blur(15px); /* Glass blur effect */
+  -webkit-backdrop-filter: blur(15px); /* For Safari */
+  border-radius: 3em;
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Transparent border */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Shadow for floating effect */
+  transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+  padding: 1.5em;
 }
+
+.forecast-card:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Enhanced shadow on hover */
+}
+
+/* Updated forecast-date for visibility */
+.forecast-date {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: Black; /* White color for better contrast */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Text shadow for visibility */
+  margin-bottom: 1em;
+}
+
+.temperature {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #2a9d8f;
+}
+
+.condition {
+  font-size: 1.5rem;
+  color: #264653;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.col-md-4 {
+  flex-basis: 30%;
+  margin: 1em;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    width: 80vw;
+  }
+
+  .forecast-card {
+    margin-bottom: 20px;
+  }
+
+  .col-md-4 {
+    flex-basis: 100%;
+  }
+
+  .input {
+    padding: 0.75em;
+  }
 }
